@@ -1,0 +1,312 @@
+selector {
+  background-image: url("https://wallpapercave.com/wp/wp7575195.jpg");
+}
+
+/* Mobile devices */
+@media only screen and (max-width: 600px) {
+  header h1 {
+    font-size: 24px;
+    padding-right: 10px;
+  }
+  div input {
+    font-size: 14px;
+    margin-right: 5px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Tablets and small desktops */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  header h1 {
+    font-size: 30px;
+    padding-right: 20px;
+  }
+
+  div input {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+
+  button {
+    font-size: 20px;
+    padding: 12px 24px;
+  }
+}
+
+/* Large desktops and higher */
+@media only screen and (min-width: 1024px) {
+  header h1 {
+    font-size: 36px;
+    padding-right: 30px;
+  }
+
+  div input {
+    font-size: 20px;
+    margin-right: 15px;
+  }
+
+  button {
+    font-size: 24px;
+    padding: 16px 32px;
+  }
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  font-family: "Dancing Script", cursive;
+  margin-top: -1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5e6cc;
+  background-size: cover;
+  background-image: url("https://wallpapercave.com/wp/wp7575195.jpg");
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+header {
+  background: linear-gradient(to right, #ffe4b5, #c19a6b);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+}
+
+header img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  border-radius: 25px;
+  pointer-events: none;
+}
+header h1 {
+  font-size: 36px;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+  pointer-events: none;
+}
+
+h1 {
+  text-shadow: 0px 0px 10px #000;
+  font-size: 50px;
+  text-align: center;
+  color: #c19a6b;
+}
+
+div {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  color: #c19a6b;
+  font-size: 30px;
+}
+
+div input {
+  border: 2px solid #c19a6b;
+  border-radius: 30px;
+  text-align: center;
+  width: 90px;
+  height: 30px;
+  background: #f5e6cc;
+  color: #c19a6b;
+  margin-right: 10px;
+  font-size: 17px;
+}
+
+div input:hover,
+div input:focus {
+  outline: none;
+  color: #000;
+  background: whitesmoke;
+  transition: background 1s ease-in;
+}
+
+button {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: 2px solid #c19a6b;
+  border-radius: 25px;
+  background-color: #c19a6b;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background-color 0.4s ease-out;
+}
+
+button:hover {
+  background-color: #f5e6cc;
+  color: #c19a6b;
+  transition: background-color 0.4s ease-out;
+  transition: all 0.5s;
+  animation: none;
+  text-shadow: 0px 0px 1.5px #c19a6e;
+}
+
+button:not(:hover) {
+  animation: pulse 3s ease-in-out infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pokemon-image {
+  height: 150px;
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.pokemon-image:hover {
+  transform: rotate(360deg);
+  transition: transform 1s ease;
+}
+
+.pokemon-name {
+  font-size: 26px;
+  text-shadow: 7px 7px 7px #000;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  animation: slide 0.5s ease-in-out;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.pokemon-image.show,
+.pokemon-name.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  text-decoration: none;
+  color: #f5e6cc;
+  font-size: 14px;
+  font-weight: bold;
+  border: 2px solid #c19a6b;
+  border-radius: 25px;
+  padding: 10px 20px;
+  transition: all 0.2s ease-in-out;
+  text-shadow: 0px 0px 10px #fff;
+}
+
+.footer a:hover {
+  background-color: #f5e6cc;
+  color: #c19a6b;
+  text-shadow: 0px 0px 2px #c19a6e;
+}
+
+.footer img {
+  width: 100%;
+  height: 50px;
+  margin-right: 10px;
+  vertical-align: middle;
+  transition: transform 1s ease-in-out;
+}
+.footer img:hover {
+  animation: none;
+  transition: all 0.5s ease-out;
+}
+
+.footer img:not(:hover) {
+  animation: rotate360 3s infinite linear;
+  transition: all 0.5 ease-in;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.footer img:hover {
+  animation: ruiop 1.1s;
+  transition: transform 1s ease-in-out;
+}
+@keyframes ruiop {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
