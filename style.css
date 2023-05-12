@@ -144,6 +144,7 @@ div input:focus {
 }
 
 button {
+  text-align: center;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -165,7 +166,7 @@ button:hover {
   background-color: #f5e6cc;
   color: #c19a6b;
   transition: background-color 0.4s ease-out;
-  transition: all 0.5s;
+  transition: 0.5s ease;
   animation: none;
   text-shadow: 0px 0px 1.5px #c19a6e;
 }
@@ -173,6 +174,7 @@ button:hover {
 button:not(:hover) {
   animation: pulse 3s ease-in-out infinite;
 }
+
 @keyframes pulse {
   0% {
     transform: scale(1);
